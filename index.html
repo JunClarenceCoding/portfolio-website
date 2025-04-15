@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
   <link href="./src/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="main.js" defer></script>
 </head>
 <body class="bg-gray-900 text-gray-100 font-sans">
 
@@ -55,154 +58,43 @@
   
   <!-- Full-Screen Mobile Menu -->
   <div id="mobile-menu" class="fixed inset-0 bg-black/80 font-bold text-white flex flex-col items-center justify-center space-y-6 transform -translate-y-full transition-transform duration-500 ease-in-out z-40 md:hidden">
-    <a href="#home" class="text-2xl hover:text-blue-400" onclick="closeMenu()">Home</a>
-    <a href="#about" class="text-2xl hover:text-blue-400" onclick="closeMenu()">About</a>
-    <a href="#projects" class="text-2xl hover:text-blue-400" onclick="closeMenu()">Projects</a>
-    <a href="#contact" class="text-2xl hover:text-blue-400" onclick="closeMenu()">Contact</a>
+    <a href="#home" id="home-link" class="text-2xl hover:text-blue-400" onclick="closeMenu()">Home</a>
+    <a href="#about" id="about-link" class="text-2xl hover:text-blue-400" onclick="closeMenu()">About</a>
+    <a href="#projects" id="projects-link" class="text-2xl hover:text-blue-400" onclick="closeMenu()">Projects</a>
+    <a href="#contact" id="contact-link" class="text-2xl hover:text-blue-400" onclick="closeMenu()">Contact</a>
   </div>
   
 
-  <!-- Home Section -->
-  <section class="min-h-screen flex items-center px-4 pt-10 pb-20" id="home">
-    <div class="max-w-6xl mx-auto flex flex-col-reverse md:flex-row items-center gap-12">
-      
-      <!-- Text -->
-      <div class="text-center md:text-left" data-aos="fade-right">
-        <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold border-gray-100 w-fit mx-auto md:mx-0" >
-          Hi, I am Jun Clarence
-        </h2>
-        <p class="text-base sm:text-lg mt-4 text-gray-400">
-          Aspiring <span id="typewriter" class="text-white font-semibold"></span>
-        </p>        
-        <a href="#projects" class="inline-block mt-6 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-500 transition">
-          View My Work
+  <div id="content"></div>
+
+  <footer class="py-6 text-gray-300 text-sm bg-gray-800">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center">
+      <!-- Left: Email -->
+      <p class="text-left mb-4 md:mb-0">
+        <a href="mailto:caseresjunclarence@gmail.com" class="hover:text-white">caseresjunclarence@gmail.com</a>
+      </p>
+  
+      <!-- Center: All Rights Reserved -->
+      <p class="text-center mb-4 md:mb-0">
+        © 2025 Jun Clarence. All rights reserved.
+      </p>
+  
+      <!-- Right: Social Media Links -->
+      <div class="flex justify-center md:justify-end gap-6">
+        <a href="https://facebook.com" target="_blank" class="w-10 h-10 rounded-full border-2 border-gray-600 flex items-center justify-center text-white hover:bg-blue-700 hover:text-white transition duration-300">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://instagram.com" target="_blank" class="w-10 h-10 rounded-full border-2 border-gray-600 flex items-center justify-center text-white hover:bg-pink-600 hover:text-white transition duration-300">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://linkedin.com" target="_blank" class="w-10 h-10 rounded-full border-2 border-gray-600 flex items-center justify-center text-white hover:bg-blue-900 hover:text-white transition duration-300">
+          <i class="fab fa-linkedin-in"></i>
         </a>
       </div>
-
-      <!-- Image -->
-      <div class="flex justify-center md:justify-end" data-aos="fade-left">
-        <img 
-          src="img/jun.jpg" 
-          alt="Your Name" 
-          class="w-48 h-48 sm:w-54 sm:h-54 md:w-64 md:h-64 lg:w-72 lg:h-72 rounded-full object-cover shadow-lg"
-        />
-      </div>
-
     </div>
-  </section>
-
-  <!-- About Section -->
-  <section class="py-16 sm:py-20 bg-white text-gray-900" id="about" data-aos="fade-up" data-aos-delay="300">
-    <div class="max-w-4xl mx-auto px-4">
-      <h3 class="text-2xl sm:text-3xl font-bold mb-6 text-center sm:text-left">About Me</h3>
-      <p class="leading-relaxed text-gray-700 text-base sm:text-lg">[Your bio here]</p>
-    </div>
-  </section>
-
-  <!-- Projects Section -->
-  <section class="py-16 sm:py-20 bg-gray-50 text-gray-900" id="projects" data-aos="fade-up" data-aos-delay="300">
-    <div class="max-w-6xl mx-auto px-4">
-      <h3 class="text-2xl sm:text-3xl font-bold mb-10 text-center sm:text-left">Projects</h3>
-      <div class="grid gap-6 sm:gap-8 grid-cols-1 md:grid-cols-2">
-        <!-- Project Card -->
-        <div class="bg-white p-6 rounded-lg shadow transition-transform hover:-translate-y-2 hover:shadow-lg duration-300">
-          <h4 class="text-xl font-semibold mb-2">Project Title</h4>
-          <p class="text-gray-600">Short description of what this project is about.</p>
-        </div>
-        <!-- Add more project cards -->
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section class="py-16 sm:py-20 bg-white text-gray-900" id="contact" data-aos="fade-up" data-aos-delay="300">
-    <div class="max-w-3xl mx-auto px-4 text-center">
-      <h3 class="text-2xl sm:text-3xl font-bold mb-6">Get In Touch</h3>
-      <p class="text-gray-600 mb-4">Send me an email at <a href="mailto:you@example.com" class="text-blue-600 underline">you@example.com</a></p>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="py-6 text-center text-gray-400 text-sm">
-    © 2025 Your Name. All rights reserved.
   </footer>
-
-  <!-- AOS JS -->
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    AOS.init();
-
-    const menuBtn = document.getElementById('menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-
-    let isOpen = false;
-
-    menuBtn.addEventListener('click', () => {
-      isOpen = !isOpen;
-      mobileMenu.classList.toggle('-translate-y-full');
-    });
-
-    function closeMenu() {
-      isOpen = false;
-      mobileMenu.classList.add('-translate-y-full');
-    }
+  
 
 
-    // Function to set the active class
-  function setActive(section) {
-    // Remove the active class from all spans
-    const spans = document.querySelectorAll('ul li span');
-    spans.forEach(span => {
-      span.classList.remove('text-blue-400');
-    });
-
-    // Add the active class to the clicked span
-    const activeSpan = document.querySelector(`#${section}-link span`);
-    activeSpan.classList.add('text-blue-400');
-  }
-
-  // Set "Home" as the default active item on page load
-  window.onload = function() {
-    setActive('home');
-  };
-
-
-
-  document.addEventListener("DOMContentLoaded", () => {
-    const typewriterElement = document.getElementById("typewriter");
-    const titles = ["Web Developer", "Game Developer"];
-    let titleIndex = 0;
-    let charIndex = 0;
-    let typing = true;
-
-    function type() {
-      const currentTitle = titles[titleIndex];
-      if (typing) {
-        if (charIndex < currentTitle.length) {
-          typewriterElement.textContent += currentTitle.charAt(charIndex);
-          charIndex++;
-          setTimeout(type, 100);
-        } else {
-          typing = false;
-          setTimeout(type, 1000); // Pause after full word
-        }
-      } else {
-        if (charIndex > 0) {
-          typewriterElement.textContent = currentTitle.substring(0, charIndex - 1);
-          charIndex--;
-          setTimeout(type, 50);
-        } else {
-          typing = true;
-          titleIndex = (titleIndex + 1) % titles.length;
-          setTimeout(type, 500); // Pause before typing next word
-        }
-      }
-    }
-
-    setTimeout(() => {
-      type();
-    }, 1000); 
-  });
-  </script>
 </body>
 </html>
