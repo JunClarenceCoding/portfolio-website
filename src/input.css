@@ -20,4 +20,33 @@
     0%, 100% { opacity: 1; }
     50% { opacity: 0; }
   }
+
+  @keyframes wave {
+    0%, 60%, 100% {
+      transform: translateY(0);
+    }
+    30% {
+      transform: translateY(-8px);
+    }
+  }
+  
+  .animate-wave {
+    animation: wave 1s infinite ease-in-out;
+    display: inline-block;
+  }
+  
+  .delay-0 {
+    animation-delay: 0s;
+  }
+  
+  .delay-150 {
+    animation-delay: 0.15s;
+  }
+  
+  .delay-300 {
+    animation-delay: 0.3s;
+  }
+  
+  
+
   
